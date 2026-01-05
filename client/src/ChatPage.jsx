@@ -44,7 +44,7 @@ export default function ChatPage({ user }) {
             return;
         }
 
-        async function initChat() {
+        async function openChat() {
             try {
                 const chatRes = await fetch(`${API_URL}/api/chats/${selectedChat}`, { credentials: "include" });
                 const chat = await chatRes.json();
@@ -87,7 +87,7 @@ export default function ChatPage({ user }) {
             }
         }
 
-        initChat();
+        openChat();
     }, [selectedChat]);
 
     const sendMessage = async content => {
